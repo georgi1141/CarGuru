@@ -1,7 +1,7 @@
 # CarGuru
 
-The project uses Angluar for the Front-End and Firebase for the Back-End.
-
+The project uses Angluar for the Front-End and Firebase for the Back-End and Data-Base.
+ 
 It also includes feetures like Bootstrap for the html components, icons  etc. 
 
 At CarGuru, you can easily post your car for sale in just a few simple steps. Once you're logged in, the user-friendly interface allows you to effortlessly create a listing for your car, providing all the essential details to attract potential buyers. But don't worry, only the owner of a car can edit or delete their own listing, ensuring a secure and personalized selling experience.
