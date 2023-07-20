@@ -1,12 +1,14 @@
-# CarMagazine
+# CarGuru
 
 The project uses Angluar for the Front-End and Firebase for the Back-End.
 
 It also includes feetures like Bootstrap for the html components, icons  etc. 
 
-This is a website where you can post your car for sale. The website has a user functionality where the current user can login and post a car for sale.The user can also delete and edit its created car but not offers created from another user account.
+At CarGuru, you can easily post your car for sale in just a few simple steps. Once you're logged in, the user-friendly interface allows you to effortlessly create a listing for your car, providing all the essential details to attract potential buyers. But don't worry, only the owner of a car can edit or delete their own listing, ensuring a secure and personalized selling experience.
 
-The car on the other hand has its details page where more detailed information is provided.
+Each car listed on CarGuru has its own dedicated details page, offering a comprehensive overview of the vehicle's specifications, features, and images. This way, potential buyers can make informed decisions and have a deeper understanding of the car they're interested in.
 
-When a car is sold, is not availavble any more in the Shop Vihecle page.
+As soon as your car is sold, it automatically disappears from the Shop Vehicle page, keeping the listings up-to-date and saving you the hassle of managing sold cars.
+
+Whether you're looking to sell your car or searching for the perfect vehicle to buy, CarGuru is the go-to destination for all your car selling needs. Join our community of car enthusiasts today and experience a seamless and enjoyable selling and buying journey.
 
