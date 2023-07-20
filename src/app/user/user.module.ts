@@ -15,9 +15,9 @@ import { RouterModule } from '@angular/router';
     ProfileComponent
   ],
   imports: [
+    AppRoutingModule,
     RouterModule,
     CommonModule,
-    AppRoutingModule
   ]
 })
 export class UserModule { }

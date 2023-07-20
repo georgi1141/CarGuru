@@ -9,6 +9,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
 import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user/user-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import { UserRoutingModule } from './user/user-routing.module';
     HomeComponent,
   ],
   imports: [
-    UserRoutingModule,
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
+    UserRoutingModule,
     FormsModule,
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase),

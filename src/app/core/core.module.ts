@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserModule } from '../user/user.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { UserModule } from '../user/user.module';
   ],
   imports: [
     CommonModule,
-    UserModule
+    UserModule,
+    RouterModule
   ],
 
   exports:[HeaderComponent, FooterComponent]
