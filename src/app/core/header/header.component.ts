@@ -17,6 +17,8 @@ export class HeaderComponent {
   logout(){
     this.userServive.logout()
     this.router.navigate(['/home'])
+    alert(`You've successfully logged out!Thank you for using our platform!`)
+    
   }
 
   }

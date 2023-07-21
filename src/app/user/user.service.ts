@@ -2,10 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
+
+
+
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+
+ 
+
+
   constructor(private fireauth: AngularFireAuth, private router: Router) {}
 
   login(email: string, password: string) {
@@ -14,7 +21,7 @@ export class UserService {
         localStorage.setItem('token', 'true');
         this.router.navigate(['/home']);
       },
-      (err) => alert('Error,something went wrong!')
+      (err) => alert(err.message)
     );
     this.router.navigate(['/login']);
   }
@@ -22,13 +29,14 @@ export class UserService {
 
   register(email:string,password:string){
 
+
     this.fireauth.createUserWithEmailAndPassword(email,password).then(
       ()=>{
         alert('Successful registration!')
       this.router.navigate(['/login']);
 
     },err=>{
-      alert('Error,something went wrong! Please try again!')
+      alert(err.messagae)
       this.router.navigate(['/register']);
     })
 
