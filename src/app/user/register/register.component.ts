@@ -24,6 +24,7 @@ export class RegisterComponent {
 
   register(){
 
+
     if(!this.validateEmail(this.email)){
         alert('Please input a correct email address!')
         return

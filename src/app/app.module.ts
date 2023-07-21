@@ -13,10 +13,11 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
