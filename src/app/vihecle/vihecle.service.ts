@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore} from '@angular/fire/compat/firestore' 
+import { getDatabase, ref, set ,onValue} from "firebase/database";
 import { Car } from '../models/car';
 
 @Injectable({
@@ -7,28 +7,40 @@ import { Car } from '../models/car';
 })
 export class VihecleService {
 
-  constructor(private angularFirestore:AngularFirestore) { }
+  constructor() { }
 
   addCar(car:Car){
-    car.id = this.angularFirestore.createId()
-    return this.angularFirestore.collection('/cars').add(car)
+
+    const db = getDatabase()
+
+   return set(ref(db,'/cars' + car.id ),{car})
+
+    // car.id = this.angularFirestore.createId()
+    // return this.angularFirestore.collection('/cars').add(car)
 
   }
 
   getAllCars(){
-    return this.angularFirestore.collection('/cars').snapshotChanges()
+
+    const db = getDatabase()
+
+    return 
+
+
+
+  //   return this.angularFirestore.collection('/cars').snapshotChanges()
   }
 
-  deleteCar(car:Car){
+  // deleteCar(car:Car){
 
-    return this.angularFirestore.doc('/cars'+car.id).delete()
+  //   return this.angularFirestore.doc('/cars'+car.id).delete()
 
-  }
+  // }
 
-  updateCar(car:Car){
-    this.deleteCar(car)
-    this.addCar(car)
-  }
+  // updateCar(car:Car){
+  //   this.deleteCar(car)
+  //   this.addCar(car)
+  // }
 
 
 }

@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
+import { VihecleModule } from './vihecle/vihecle.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { environment } from 'src/environments/environment.development';
     UserRoutingModule,
     FormsModule,
     CoreModule,
+    VihecleModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],

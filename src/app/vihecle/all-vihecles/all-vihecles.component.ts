@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Car } from 'src/app/models/car';
-import { VihecleService } from '../vihecle.service';
 
 @Component({
   selector: 'app-all-vihecles',
@@ -20,7 +19,7 @@ export class AllViheclesComponent {
 
 
 
-  constructor(private vihecleService:VihecleService){}
+  constructor(){}
 
   
 

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SellVihecleComponent } from './vihecle/sell-vihecle/sell-vihecle.component';
 import { AllViheclesComponent } from './vihecle/all-vihecles/all-vihecles.component';
+import { SellVihecleComponent } from './vihecle/sell-vihecle/sell-vihecle.component';
+import { MyVehiclesComponent } from './vihecle/my-vihecles/my-vehicles.component';
+
 
 
 const routes: Routes = [{
@@ -13,22 +15,15 @@ const routes: Routes = [{
 {
   path: 'home',
   component: HomeComponent,
-
-},
-{
-  path: 'sell-my-car',
-  component: SellVihecleComponent,
-
-},
-{
-  path: 'shop',
-  component: AllViheclesComponent,
-
-},
-{
-  path: 'my-vihecles',
-  component: AllViheclesComponent,
-
+},{
+  path:'shop',
+  component:AllViheclesComponent
+},{
+  path:'sell-my-car',
+  component:SellVihecleComponent
+},{
+  path:'my-vihecles',
+  component:MyVehiclesComponent
 }
 ];
 
