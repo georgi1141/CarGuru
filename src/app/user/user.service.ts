@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
+  get isLogged() {
+    return localStorage.getItem('token')
+  }
+
  
 
 
@@ -17,8 +21,8 @@ export class UserService {
 
   login(email: string, password: string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then(
-      () => {
-        localStorage.setItem('token', 'true');
+      (res) => {
+        localStorage.setItem('token','true');
         this.router.navigate(['/home']);
       },
       (err) => alert(err.message)
