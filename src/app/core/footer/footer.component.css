@@ -1,0 +1,43 @@
+/* CSS for Responsive Footer */
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .github-logo {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .github-logo img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .github-logo img:hover {
+    transform: scale(1.1);
+  }
+  
