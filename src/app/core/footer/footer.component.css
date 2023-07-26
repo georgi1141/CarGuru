@@ -3,12 +3,16 @@
 footer {
     background-color: #f2f2f2;
     text-align: center;
-    position: absolute;
     bottom: 0;
+      position: fixed;
     width: 100%;
+    margin: 0 auto;
   }
+
+
   
   .container {
+    
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -39,4 +43,4 @@ footer {
   .github-logo img:hover {
     transform: scale(1.1);
   }
-  
+

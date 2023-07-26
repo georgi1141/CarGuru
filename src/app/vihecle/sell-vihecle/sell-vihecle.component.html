@@ -2,11 +2,17 @@
     <div class="row mt-3">
         <div class="col"></div>
         <div class="col-10">
-            <h2 class="text-center text-success">Add Vihecle</h2>
+            <h2 class="text-center text-primary">Add Vihecle</h2>
             <div class="card shadow">
                 <div class="card-body">
 
-                    <form >
+
+                    <h1 *ngIf="!isLoggedIn()" class="text-center text-primary mb-4">
+                        Please login to add a vihecle!
+                        <button routerLink="/login" class="btn btn-primary ms-2">Log In</button>
+                      </h1>
+
+                    <form *ngIf="isLoggedIn()" >
                         <div class="row g-2">
                             <div class="col-md">
                                 <div class="form-floating">

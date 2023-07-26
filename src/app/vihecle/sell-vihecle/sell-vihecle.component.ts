@@ -9,6 +9,7 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./sell-vihecle.component.css'],
 })
 export class SellVihecleComponent {
+
   car: Car | any = {
     price: '',
     make: '',
@@ -29,6 +30,12 @@ export class SellVihecleComponent {
     private vihecleService: VihecleService,
     private userService: UserService
   ) {}
+
+
+  isLoggedIn(){
+    return this.userService.isLoggedIn()
+  }
+
 
   submitForm(): void {
     //create car in Firestore with the form-data

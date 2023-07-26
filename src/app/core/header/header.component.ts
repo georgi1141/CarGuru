@@ -21,6 +21,7 @@ userName :string = ''
 
   
 
+
   isLoggedIn() {
     const token = localStorage.getItem('token');
     if (token !== null) {
@@ -30,7 +31,7 @@ userName :string = ''
       this.user = null;
     }
     return this.user
-  }
+  } 
 
 
   logout(){
