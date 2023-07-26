@@ -13,6 +13,9 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 import { VihecleModule } from './vihecle/vihecle.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -25,10 +28,13 @@ import { VihecleModule } from './vihecle/vihecle.module';
     RouterModule,
     AppRoutingModule,
     UserRoutingModule,
+    VihecleModule,
     FormsModule,
     CoreModule,
-    VihecleModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

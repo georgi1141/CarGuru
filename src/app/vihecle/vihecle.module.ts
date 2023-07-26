@@ -5,6 +5,8 @@ import { AllViheclesComponent } from './all-vihecles/all-vihecles.component';
 import { MyVehiclesComponent } from './my-vihecles/my-vehicles.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     AppRoutingModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule
+    
   ]
 })
 export class VihecleModule { }

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component ,} from '@angular/core';
 import { VihecleService } from '../vihecle.service';
 import { Car } from 'src/app/models/car';
+
+
 
 @Component({
   selector: 'app-sell-vihecle',
@@ -9,24 +11,28 @@ import { Car } from 'src/app/models/car';
 })
 
 
-
 export class SellVihecleComponent {
 
-  car:Car ={
-    id:'123',
-    make:'VW'
-  }
-
-
+  
+    id=''
+    make=''
+    model=''
+    year=''
+    kilometers=''
+    engine_type=''
+    engine_power=''
+    gearbox_type=''
+    image_url=''
+    info=''
+    owner_name=''
+    owner_telephone=''
+    owner_id=''
+  
   constructor(private vihecleService:VihecleService){}
 
-  create(){
-
-this.vihecleService.addCar(this.car)
-
+  submitForm():void{
+    alert(this.make)
   }
-
-
 
 
 }

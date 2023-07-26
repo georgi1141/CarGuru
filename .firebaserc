@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "carguru-ec389": {
+      "hosting": {
+        "Car-Magazine": [
+          "carguru-ec389"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "carguru-ec389"
+  }
+}
