@@ -32,6 +32,20 @@ export class SellVihecleComponent {
 
   submitForm():void{
     alert(this.make)
+
+    this.id=''
+    this.make=''
+    this.model=''
+    this.year=''
+    this.kilometers=''
+    this.engine_type=''
+    this.engine_power=''
+    this.gearbox_type=''
+    this.image_url=''
+    this.info=''
+    this.owner_name=''
+    this.owner_telephone=''
+    
   }
 
 
