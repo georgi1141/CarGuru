@@ -1,0 +1,35 @@
+<div class="single_product">
+    <div class="container-fluid">
+        <div class="product_image_side">
+            <div class="row">
+                <div class="col-md-5">
+                     <img src={{currentCar.image_url}} name="stage" width="600" height="600" />
+                    
+                </div>
+                <div class="col-md-7">
+                    <div class="product_description text-left">
+                        <div class="product_name">{{currentCar.make}} {{currentCar.model}}</div>
+                        <div class="mt-2">Price:<span class="product_price">{{currentCar.price}}$</span> </div>
+                        <hr class="singleline">
+                        <div>{{currentCar.info}}</div>
+                        <hr class="singleline">
+
+                        <div>Year of production - <span class="car_color">{{currentCar.year}}</span></div>
+                        <div>Engine type - <span class="car_service">{{currentCar.engine_type}}</span></div>
+                        <div> Engine power - <span class="car_seats">{{currentCar.engine_power}}</span></div>
+                        <div> Transmission - <span class="car_transmission">{{currentCar.gearbox_type}}</span></div>
+                        <div>Kilometers - <span class="car_engine">{{currentCar.kilometers}} KM</span></div>
+                        <br>
+                        <br>
+                        <div *ngIf="isLogged()" >Seller's name - <span class="car_engine">{{currentCar.owner_name}}</span></div>
+                        <div *ngIf="isLogged()" >Seller's contact - <span class="car_engine">{{currentCar.owner_telephone}}</span></div>
+
+                        <div>
+                            <div *ngIf="isLogged()" (click)="delete()" class="col-xs-6 mt-5"> <button type="button" class="btn btn-success shop-button">Buy the car!</button> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

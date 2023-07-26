@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AllViheclesComponent } from './vihecle/all-vihecles/all-vihecles.component';
 import { SellVihecleComponent } from './vihecle/sell-vihecle/sell-vihecle.component';
 import { MyVehiclesComponent } from './vihecle/my-vihecles/my-vehicles.component';
+import { VihecleDetailsComponent } from './vihecle/vihecle-details/vihecle-details.component';
 
 
 
@@ -17,7 +18,14 @@ const routes: Routes = [{
   component: HomeComponent,
 },{
   path:'shop',
-  component:AllViheclesComponent
+  children:[
+    {path:'',
+    pathMatch: 'full',
+    component:AllViheclesComponent},{
+      path:':carId',
+      component: VihecleDetailsComponent
+    }
+  ]
 },{
   path:'sell-my-car',
   component:SellVihecleComponent

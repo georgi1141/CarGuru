@@ -17,4 +17,10 @@ export class MyVehiclesComponent implements OnInit {
     this.carList = this.vihecleService.getCarsByOwner();
   }
 
+  
+
+  delete(carid:string){
+    this.vihecleService.deleteCar(carid)
+  }
+
 }

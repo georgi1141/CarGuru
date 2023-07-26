@@ -2,7 +2,7 @@
     <div class="row">
 
       <div *ngFor="let car of carList" class="col-sm-6 col-md-4 d-flex">
-        <div class="card flex-fill">
+        <div class="card flex-fill mb-4">
             
           <img src={{car.image_url}} class="card-img-top" alt="image of a car">
           <div class="card-body">
@@ -34,7 +34,7 @@
               </div>
     
               <div class="btn-center">
-                <a href="#" class="btn btn-primary">Details</a>
+                <a [routerLink]="car.id" class="btn btn-primary">Details</a>
               </div>
           </div>
         </div>

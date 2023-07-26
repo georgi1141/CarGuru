@@ -6,6 +6,7 @@ import { MyVehiclesComponent } from './my-vihecles/my-vehicles.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { VihecleDetailsComponent } from './vihecle-details/vihecle-details.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     SellVihecleComponent,
     AllViheclesComponent,
-    MyVehiclesComponent
+    MyVehiclesComponent,
+    VihecleDetailsComponent
   ],
   imports: [
     AppRoutingModule,

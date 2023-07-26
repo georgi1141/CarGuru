@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 import { Car } from '../models/car';
 import { Router } from '@angular/router';
 import { UserService } from '../user/user.service';
+import { map } from 'rxjs/operators';
 
 
 
@@ -19,6 +20,16 @@ export class VihecleService {
 
   getAllCars() {
     return this.carsRef.valueChanges();
+  }
+
+  getCarById(carId: string) {
+    return this.carsRef.snapshotChanges().pipe(
+      map(changes => {
+        return changes
+          .filter(change => change.payload.exists() && change.payload.key === carId)
+          .map(change => ({ key: change.payload.key, ...change.payload.val() }));
+      })
+    );
   }
 
   getCarsByOwner() {
@@ -40,17 +51,25 @@ export class VihecleService {
 
 
   addCar(car: Car) {
-    this.carsRef.push(car)
-      .then(() =>{
-        alert('Car added successfully!')
-        this.router.navigate(['/shop'])
-      
-      } )
-      .catch(error =>{
-
-        console.error('Error adding car:', error)
-        this.router.navigate(['/sell-my-car'])
-      } );
+    this.carsRef
+      .push(car)
+      .then((carRef) => {
+        const carId = carRef.key; 
+        if (carId) {
+          car.id = carId;
+          this.carsRef.update(carId, car).then(() => {
+            alert('Car added successfully!');
+            this.router.navigate(['/shop']);
+          }).catch(error => {
+            console.error('Error adding car:', error);
+            this.router.navigate(['/sell-my-car']);
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error adding car:', error);
+        this.router.navigate(['/sell-my-car']);
+      });
   }
 
   updateCar(key: string, car: Car) {
@@ -61,7 +80,11 @@ export class VihecleService {
 
   deleteCar(key: string) {
     this.carsRef.remove(key)
-      .then(() => console.log('Car deleted successfully!'))
+      .then(() => {
+        console.log('Car deleted successfully!')
+      this.router.navigate(['/shop'])
+        
+      })
       .catch(error => console.error('Error deleting car:', error));
   }
 

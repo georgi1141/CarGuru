@@ -12,6 +12,7 @@ export interface Car {
     owner_name:string
     owner_telephone:string
     owner_id:string|null
+    id:any
 
 }
 

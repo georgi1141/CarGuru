@@ -40,19 +40,8 @@ export class SellVihecleComponent {
   submitForm(): void {
     //create car in Firestore with the form-data
     this.vihecleService.addCar(this.car);
+   
 
-    alert('Vihecle successfully created!');
-
-    this.car.make = '';
-    this.car.model = '';
-    this.car.year = '';
-    this.car.kilometers = '';
-    this.car.engine_type = '';
-    this.car.engine_power = '';
-    this.car.gearbox_type = '';
-    this.car.image_url = '';
-    this.car.info = '';
-    this.car.owner_name = '';
-    this.car.owner_telephone = '';
+ 
   }
 }
