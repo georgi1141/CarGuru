@@ -8,4 +8,4 @@ export const environment = {
     authDomain: 'carguru-ec389.firebaseapp.com',
     messagingSenderId: '371037706548',
     measurementId: 'G-2GEFX3JV2G',
-  },};
+  }};

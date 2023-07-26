@@ -18,7 +18,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     AppRoutingModule,
-    RouterModule,
     CommonModule,
     FormsModule
     

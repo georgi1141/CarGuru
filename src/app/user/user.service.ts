@@ -7,21 +7,29 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserService {
-
-
-  user:User | any
+  user: User | any;
 
   constructor(private fireauth: AngularFireAuth, private router: Router) {}
 
+  getUserId(): string | null {
+    const token = localStorage.getItem('token');
+    let userId: string | null = '';
+    if (token !== null) {
+      const user = JSON.parse(token);
+      userId = user.uid;
+    } else {
+      userId = null;
+    }
+    return userId;
+  }
 
   login(email: string, password: string) {
-
     this.fireauth.signInWithEmailAndPassword(email, password).then(
       (currentUser) => {
         this.user = {
-          email:currentUser.user?.email,
-          uid:currentUser.user?.uid
-        }
+          email: currentUser.user?.email,
+          uid: currentUser.user?.uid,
+        };
         localStorage.setItem('token', JSON.stringify(this.user));
         this.router.navigate(['/home']);
       },
@@ -55,10 +63,3 @@ export class UserService {
     );
   }
 }
-
-
-
-
-
-
-

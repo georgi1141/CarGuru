@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AngularFireModule} from '@angular/fire/compat';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +25,13 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     AppComponent,
     HomeComponent
   ],
+  
+  
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
     BrowserModule,
     RouterModule,
     AppRoutingModule,
@@ -31,12 +39,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     VihecleModule,
     FormsModule,
     CoreModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

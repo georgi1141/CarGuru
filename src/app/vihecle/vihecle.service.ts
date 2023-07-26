@@ -1,46 +1,27 @@
 import { Injectable } from '@angular/core';
-import { getDatabase, ref, set ,onValue} from "firebase/database";
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Car } from '../models/car';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VihecleService {
+  private dbPath = '/cars';
+  private carsRef: AngularFireList<Car>;
 
-  constructor() { }
-
-  addCar(car:Car){
-
-    const db = getDatabase()
-
-   return set(ref(db,'/cars' + car.id ),{car})
-
-    // car.id = this.angularFirestore.createId()
-    // return this.angularFirestore.collection('/cars').add(car)
-
+  constructor(private db: AngularFireDatabase,private router: Router) {
+    this.carsRef = db.list<Car>(this.dbPath);
   }
 
-  getAllCars(){
-
-    const db = getDatabase()
-
-    return 
-
-
-
-  //   return this.angularFirestore.collection('/cars').snapshotChanges()
+  addCar(car: Car) {
+    this.carsRef.push(car)
+      .then(() =>{
+        alert('Car added successfully!')
+        this.router.navigate(['/shop'])
+      
+      } )
+      .catch(error => console.error('Error adding car:', error));
   }
-
-  // deleteCar(car:Car){
-
-  //   return this.angularFirestore.doc('/cars'+car.id).delete()
-
-  // }
-
-  // updateCar(car:Car){
-  //   this.deleteCar(car)
-  //   this.addCar(car)
-  // }
-
-
 }

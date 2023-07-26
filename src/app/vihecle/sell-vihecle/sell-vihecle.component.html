@@ -10,14 +10,14 @@
                         <div class="row g-2">
                             <div class="col-md">
                                 <div class="form-floating">
-                                    <input [(ngModel)]="make" name="make" class="form-control" id="floatingInputGrid"
+                                    <input [(ngModel)]="car.make" name="make" class="form-control" id="floatingInputGrid"
                                         placeholder="enter brand" />
                                     <label for="floatingInputGrid">Brand:</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="form-floating">
-                                    <input [(ngModel)]="model" name="model" type="email" class="form-control" id="floatingInputGrid"
+                                    <input [(ngModel)]="car.model" name="model" type="email" class="form-control" id="floatingInputGrid"
                                         placeholder="enter model" />
                                     <label for="floatingInputGrid">Model:</label>
                                 </div>
@@ -26,31 +26,35 @@
 
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Year of production:</span>
-                            <input [(ngModel)]="year" name="year" type="text" class="form-control" />
+                            <input [(ngModel)]="car.year" name="year" type="text" class="form-control" />
                         </div>
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Kilometers:</span>
-                            <input [(ngModel)]="kilometers" name="kilometers" type="text" class="form-control" />
+                            <input [(ngModel)]="car.kilometers" name="kilometers" type="text" class="form-control" />
                         </div>
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Engine type:</span>
-                            <input [(ngModel)]="engine_type" name="engine_type" type="text" class="form-control" />
+                            <input [(ngModel)]="car.engine_type" name="engine_type" type="text" class="form-control" />
                         </div>
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Engine power:</span>
-                            <input [(ngModel)]="engine_power" name="engine_power" type="text" class="form-control" />
+                            <input [(ngModel)]="car.engine_power" name="engine_power" type="text" class="form-control" />
                         </div>
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Gearbox type:</span>
-                            <input [(ngModel)]="gearbox_type"  name="gearbox_type" type="text" class="form-control" />
+                            <input [(ngModel)]="car.gearbox_type"  name="gearbox_type" type="text" class="form-control" />
                         </div>
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Image URL:</span>
-                            <input [(ngModel)]="image_url" name="image_url" type="text" class="form-control" />
+                            <input [(ngModel)]="car.image_url" name="image_url" type="text" class="form-control" />
+                        </div>
+                        <div class="input-group mb-3 mt-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Price:</span>
+                            <input [(ngModel)]="car.price" name="price" type="text" class="form-control" />
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <input [(ngModel)]="info" name="info" type="email" class="form-control" id="floatingInputGrid"
+                                <input [(ngModel)]="car.info" name="info" type="email" class="form-control" id="floatingInputGrid"
                                     placeholder="enter brand" />
                                 <label for="floatingInputGrid">Enter additional info:</label>
                             </div>
@@ -59,14 +63,14 @@
                         <div class="row mt-3 g-2">
                             <div class="col-md">
                                 <div class="form-floating">
-                                    <input [(ngModel)]="owner_name" name="owner_name" type="email" class="form-control" id="floatingInputGrid"
+                                    <input [(ngModel)]="car.owner_name" name="owner_name" type="email" class="form-control" id="floatingInputGrid"
                                         placeholder="seller's name" />
                                     <label for="floatingInputGrid">Seller's name:</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="form-floating">
-                                    <input [(ngModel)]="owner_telephone" name="owner_telephone" type="email" class="form-control"
+                                    <input [(ngModel)]="car.owner_telephone" name="owner_telephone" type="email" class="form-control"
                                         id="floatingInputGrid" placeholder="seller's telephone" />
                                     <label for="floatingInputGrid">Seller's mobile number:</label>
                                 </div>

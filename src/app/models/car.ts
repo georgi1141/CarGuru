@@ -1,5 +1,5 @@
 export interface Car {
-    id:string
+    price:string
     make:string
     model:string
     year:number
@@ -11,7 +11,7 @@ export interface Car {
     info:string
     owner_name:string
     owner_telephone:string
-    owner_id:string
+    owner_id:string|null
 
 }
 
