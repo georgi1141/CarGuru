@@ -11,8 +11,6 @@ export class UserService {
 
   constructor(private fireauth: AngularFireAuth, private router: Router) {}
 
-
-
   isLoggedIn() {
     const token = localStorage.getItem('token');
     if (token !== null) {
@@ -20,12 +18,8 @@ export class UserService {
     } else {
       this.user = null;
     }
-    return this.user
+    return this.user;
   }
-
-
-
-
 
   getUserId(): string | null {
     const token = localStorage.getItem('token');

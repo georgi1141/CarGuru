@@ -8,19 +8,23 @@ import { Car } from 'src/app/models/car';
   styleUrls: ['./my-vehicles.component.css']
 })
 export class MyVehiclesComponent implements OnInit {
-
   carList: Car[] = [];
 
   constructor(private vihecleService: VihecleService) {}
 
   ngOnInit() {
-    this.carList = this.vihecleService.getCarsByOwner();
+    this.vihecleService.getCarsByOwner().subscribe(
+      (cars: Car[]) => {
+        this.carList = cars;
+      },
+      (error) => {
+        console.error('Error fetching cars:', error);
+        // Handle error if necessary
+      }
+    );
   }
 
-  
-
-  delete(carid:string){
-    this.vihecleService.deleteCar(carid)
+  delete(carid: string) {
+    this.vihecleService.deleteCar(carid);
   }
-
 }

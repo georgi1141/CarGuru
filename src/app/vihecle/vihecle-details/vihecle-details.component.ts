@@ -14,28 +14,27 @@ export class VihecleDetailsComponent implements OnDestroy {
   currentCar: Car | any;
   private carSubscription: Subscription | undefined;
 
-  constructor(private userService:UserService ,private vihecleService: VihecleService, private activatedRoute: ActivatedRoute) {
+  constructor(private userService: UserService, private vihecleService: VihecleService, private activatedRoute: ActivatedRoute) {
     this.getCar();
   }
 
-  isLogged(){
-    return this.userService.isLoggedIn()
+  isLogged() {
+    return this.userService.isLoggedIn();
   }
 
-  delete(){
-    const carId = this.activatedRoute.snapshot.params['carId']
-    this.vihecleService.deleteCar(carId)
+  delete() {
+    const carId = this.activatedRoute.snapshot.params['carId'];
+    this.vihecleService.deleteCar(carId);
   }
 
   getCar() {
-    const carId = this.activatedRoute.snapshot.params['carId']
+    const carId = this.activatedRoute.snapshot.params['carId'];
     this.carSubscription = this.vihecleService.getCarById(carId).subscribe(result => {
-      this.currentCar = result[0];
+      this.currentCar = result;
     });
   }
 
   ngOnDestroy() {
-    
     if (this.carSubscription) {
       this.carSubscription.unsubscribe();
     }

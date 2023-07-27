@@ -10,6 +10,8 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class SellVihecleComponent {
 
+  isLoggedIn = false;
+
   car: Car | any = {
     price: '',
     make: '',
@@ -29,19 +31,24 @@ export class SellVihecleComponent {
   constructor(
     private vihecleService: VihecleService,
     private userService: UserService
-  ) {}
-
-
-  isLoggedIn(){
-    return this.userService.isLoggedIn()
+  ) {
+    this.isLoggedIn = this.userService.isLoggedIn();
   }
 
 
-  submitForm(): void {
-    //create car in Firestore with the form-data
-    this.vihecleService.addCar(this.car);
-   
 
- 
+
+
+  submitForm(carForm: any): void {
+    if (carForm.invalid) {
+      // If the form is invalid, display warnings for each required field
+      Object.keys(carForm.controls).forEach(control => {
+        carForm.controls[control].markAsTouched();
+      });
+      return;
+    }
+
+    // Create car in Firestore with the form-data
+    this.vihecleService.addCar(this.car);
   }
 }
