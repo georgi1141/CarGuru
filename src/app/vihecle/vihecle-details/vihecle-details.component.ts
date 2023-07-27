@@ -11,6 +11,7 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./vihecle-details.component.css']
 })
 export class VihecleDetailsComponent implements OnDestroy {
+  user = ''
   currentCar: Car | any;
   private carSubscription: Subscription | undefined;
 
@@ -18,9 +19,20 @@ export class VihecleDetailsComponent implements OnDestroy {
     this.getCar();
   }
 
+  // *looses state when page is being refreshed*
+  // isLogged() {
+  //   return this.userService.isLoggedIn();
+  // }
+
   isLogged() {
-    return this.userService.isLoggedIn();
-  }
+    const token = localStorage.getItem('token');
+    if (token !== null) {
+      this.user = JSON.parse(token);
+    } else {
+      this.user = '';
+    }
+    return this.user
+  } 
 
   delete() {
     const carId = this.activatedRoute.snapshot.params['carId'];

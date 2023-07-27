@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class SellVihecleComponent {
 
-  isLoggedIn = false;
+  user = '';
 
   car: Car | any = {
     price: '',
@@ -32,8 +32,18 @@ export class SellVihecleComponent {
     private vihecleService: VihecleService,
     private userService: UserService
   ) {
-    this.isLoggedIn = this.userService.isLoggedIn();
+    
   }
+
+  isLoggedIn() {
+    const token = localStorage.getItem('token');
+    if (token !== null) {
+      this.user = JSON.parse(token);
+    } else {
+      this.user = '';
+    }
+    return this.user
+  } 
 
 
 
