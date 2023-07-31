@@ -1,6 +1,8 @@
 # CarGuru
 
-The project uses Angluar for the Front-End and Firebase for the Back-End and Data-Base.
+    
+
+The project uses Angluar for the Front-End and Firebase for the Back-End and Data-Base.It has been hosted at [https://carguru-ec389.web.app]
  
 It also includes feetures like Bootstrap for the html components, icons  etc. 
 
