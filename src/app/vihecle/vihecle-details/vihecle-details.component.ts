@@ -3,7 +3,6 @@ import { Car } from 'src/app/models/car';
 import { VihecleService } from '../vihecle.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-vihecle-details',
@@ -15,7 +14,7 @@ export class VihecleDetailsComponent implements OnDestroy {
   currentCar: Car | any;
   private carSubscription: Subscription | undefined;
 
-  constructor(private userService: UserService, private vihecleService: VihecleService, private activatedRoute: ActivatedRoute) {
+  constructor(private vihecleService: VihecleService, private activatedRoute: ActivatedRoute) {
     this.getCar();
   }
 

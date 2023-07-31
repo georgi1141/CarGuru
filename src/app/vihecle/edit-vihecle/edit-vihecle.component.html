@@ -1,0 +1,282 @@
+<div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <h2 class="text-center text-primary">Edit Vihecle</h2>
+        <div class="card shadow">
+          <div class="card-body">
+     
+  
+            <form  #carForm="ngForm">
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                    [(ngModel)]="car.make"
+                      name="make"
+                      class="form-control"
+                      id="floatingInputGrid"
+                      placeholder="enter brand"
+                      required
+                    />
+                    <label for="floatingInputGrid">Brand:</label>
+                  </div>
+                  <div
+                    *ngIf="carForm.submitted && carForm.controls['make']?.invalid"
+                    class="text-danger"
+                  >
+                    Brand is required.
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                    [(ngModel)]="car.model"
+                      name="model"
+                      class="form-control"
+                      id="floatingInputGrid"
+                      placeholder="enter model"
+                      required
+                    />
+                    <label for="floatingInputGrid">Model:</label>
+                  </div>
+                  <div
+                    *ngIf="
+                      carForm.submitted && carForm.controls['model']?.invalid
+                    "
+                    class="text-danger"
+                  >
+                    Model is required.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Year of production:</span
+                >
+                <input
+                [(ngModel)]="car.year"
+                  name="year"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="carForm.submitted && carForm.controls['year']?.invalid"
+                class="text-danger"
+              >
+                Year is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Kilometers:</span
+                >
+                <input
+                [(ngModel)]="car.kilometers"
+                  name="kilometers"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="
+                  carForm.submitted && carForm.controls['kilometers']?.invalid
+                "
+                class="text-danger"
+              >
+                Kilometers is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Engine type:</span
+                >
+                <input
+                [(ngModel)]="car.engine_type"
+                  name="engine_type"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="
+                  carForm.submitted && carForm.controls['engine_type']?.invalid
+                "
+                class="text-danger"
+              >
+                Engine type is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Engine power:</span
+                >
+                <input
+                [(ngModel)]="car.engine_power"
+                  name="engine_power"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="
+                  carForm.submitted && carForm.controls['engine_power']?.invalid
+                "
+                class="text-danger"
+              >
+                Engine power is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Gearbox type:</span
+                >
+                <input
+                [(ngModel)]="car.gearbox_type"
+                  name="gearbox_type"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="
+                  carForm.submitted && carForm.controls['gearbox_type']?.invalid
+                "
+                class="text-danger"
+              >
+                Gearbox type is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Image URL:</span
+                >
+                <input
+                [(ngModel)]="car.image_url"
+                  name="image_url"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="
+                  carForm.submitted && carForm.controls['image_url']?.invalid
+                "
+                class="text-danger"
+              >
+                Image URL is required.
+              </div>
+  
+              <div class="input-group mb-3 mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Price:</span
+                >
+                <input
+                [(ngModel)]="car.price"
+                  name="price"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div
+                *ngIf="carForm.submitted && carForm.controls['price']?.invalid"
+                class="text-danger"
+              >
+                Price is required.
+              </div>
+  
+              <div class="col-md">
+                <div class="form-floating">
+                  <input
+                  [(ngModel)]="car.info"
+                    name="info"
+                    type="email"
+                    class="form-control"
+                    id="floatingInputGrid"
+                    placeholder="enter brand"
+                  />
+                  <label for="floatingInputGrid">Enter additional info:</label>
+                </div>
+              </div>
+              <div
+                *ngIf="carForm.submitted && carForm.controls['info']?.invalid"
+                class="text-danger"
+              >
+                Additional info is required.
+              </div>
+  
+              <div class="row mt-3 g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                    [(ngModel)]="car.owner_name"
+                      name="owner_name"
+                      type="email"
+                      class="form-control"
+                      id="floatingInputGrid"
+                      placeholder="seller's name"
+                      required
+                    />
+                    <label for="floatingInputGrid">Seller's name:</label>
+                  </div>
+                  <div
+                    *ngIf="
+                      carForm.submitted && carForm.controls['owner_name']?.invalid
+                    "
+                    class="text-danger"
+                  >
+                    Seller's name is required.
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                     [(ngModel)]="car.owner_telephone"
+                      name="owner_telephone"
+                      type="email"
+                      class="form-control"
+                      id="floatingInputGrid"
+                      placeholder="seller's telephone"
+                      required
+                    />
+                    <label for="floatingInputGrid">Seller's mobile number:</label>
+                  </div>
+                  <div
+                    *ngIf="
+                      carForm.submitted &&
+                      carForm.controls['owner_telephone']?.invalid
+                    "
+                    class="text-danger"
+                  >
+                    Seller's mobile number is required.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="text-center">
+                <button
+                  (click)="submitForm()"
+                  type="submit"
+                  [disabled]="carForm.invalid"
+                  class="btn btn-outline-success"
+                >
+                  Edit my car!
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  
