@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 body {
   width: 100%;
   height: 100%;
@@ -7,6 +8,7 @@ body {
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
+
 .single_product {
   padding-top: 66px;
   padding-bottom: 140px;
@@ -14,18 +16,23 @@ body {
   margin-top: 0px;
   padding: 17px;
 }
+
 .product_image_side {
   background-color: #fff;
 }
+
 .product_description {
   padding: 15px;
 }
+
 .product_name {
   font-size: 22px;
 }
+
 input {
   display: none;
 }
+
 .button {
   display: inline-block;
   position: relative;
@@ -34,6 +41,7 @@ input {
   margin: 10px;
   cursor: pointer;
 }
+
 .button span {
   display: block;
   position: absolute;
@@ -42,30 +50,33 @@ input {
   padding: 0;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 100%;
   background: #eeeeee;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   transition: ease 0.3s;
 }
+
 .button span:hover {
   padding: 10px;
 }
+
 .red .button span {
   background: red;
 }
+
 .silver .button span {
   background: silver;
 }
+
 .grey .button span {
   background: grey;
 }
+
 .blue .button span {
   background: blue;
 }
+
 .layer {
   display: block;
   position: absolute;
@@ -76,15 +87,42 @@ input {
   background: transparent;
   z-index: -1;
 }
+
 #bar {
   width: 30%;
   background-color: black;
   margin: auto;
 }
+
 #progress {
   width: 1%;
   height: 30px;
   background-color: #fcec03;
   line-height: 30px;
   text-align: center;
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 767px) {
+  .product_image_side .row {
+    flex-direction: column;
+  }
+
+  .product_image_side img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product_description {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .col-md-5,
+  .col-md-7 {
+    width: 100%;
+    padding: 0;
+  }
 }
