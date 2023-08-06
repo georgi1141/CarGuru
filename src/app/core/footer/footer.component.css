@@ -1,6 +1,7 @@
 /* CSS for Responsive Footer */
 
 footer {
+    z-index: 10;
     background-color: #f2f2f2;
     text-align: center;
     bottom: 0;
