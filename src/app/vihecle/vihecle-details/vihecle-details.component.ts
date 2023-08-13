@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { VihecleService } from '../vihecle.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,13 +9,19 @@ import { Subscription } from 'rxjs';
   templateUrl: './vihecle-details.component.html',
   styleUrls: ['./vihecle-details.component.css']
 })
-export class VihecleDetailsComponent implements OnDestroy {
+export class VihecleDetailsComponent implements OnDestroy,OnInit {
   user = ''
   currentCar: Car | any;
   private carSubscription: Subscription | undefined;
 
   constructor(private vihecleService: VihecleService, private activatedRoute: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+
     this.getCar();
+
+    
   }
 
   // *looses state when page is being refreshed*
